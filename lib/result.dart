@@ -5,14 +5,13 @@ import 'package:clipboard_manager/clipboard_manager.dart';
 
 String searchWord;
 
-class Home extends StatefulWidget {
-  static String searchWord='hello';
+class Result extends StatefulWidget {
   
   @override
-  _HomeState createState() => _HomeState();
+  _ResultState createState() => _ResultState();
 }
 
-class _HomeState extends State<Home> {
+class _ResultState extends State<Result> {
  
   String api = 'https://rhymebrain.com/talk?function=getRhymes&word=$searchWord';
   var res, words;
@@ -34,7 +33,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title:Text('Test'),backgroundColor: Colors.blueGrey),
+      appBar: AppBar(title:Text('Results'),backgroundColor: Colors.blueGrey),
       backgroundColor: Colors.white70,
       body: Center ( child : res != null ? ListView.builder(
         itemCount: words.length,

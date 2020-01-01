@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rhyme_generator/home.dart';
+import 'package:rhyme_generator/result.dart';
 
 class Search extends StatefulWidget {
   @override
@@ -34,7 +34,7 @@ class _SearchState extends State<Search> {
               onPressed: () {
                 Navigator.push(context,
                           MaterialPageRoute(
-                            builder: (context) => Home(),
+                            builder: (context) => Result(),
                           ),
                         );
                         
