@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rhyme_generator/services/network.dart';
 import 'package:clipboard_manager/clipboard_manager.dart';
+import 'package:rhyme_generator/services/show_toast.dart';
 
 String searchWord;
 
@@ -44,7 +45,9 @@ class _ResultState extends State<Result> {
                     leading: Icon(Icons.content_copy),
                     title: Text(word),
                     onTap: () {
-                      ClipboardManager.copyToClipBoard(word);
+                      ClipboardManager.copyToClipBoard(word).then((){
+                        sToast('Copied');
+                      });
                     },
                   ),
                 );
